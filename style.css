@@ -1,133 +1,183 @@
-/* styles.css */
+/* Allgemeine Stile */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
     color: #333;
+    background-color: #f9f9f9;
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.header {
-    background: #f8f9fa;
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.header .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.navbar a {
-    text-decoration: none;
-    margin: 0 15px;
-    color: #333;
-}
-
-.navbar a:hover {
-    color: #007bff;
-}
-
-.hero {
-    background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero-content h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    color: white;
-    background: #007bff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.btn:hover {
-    background: #0056b3;
-}
-
-.products {
-    padding: 40px 20px;
-    text-align: center;
-    background: #f9f9f9;
-}
-
-.products h2 {
-    margin-bottom: 20px;
-}
-
-.product-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.product-item {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    width: 250px;
-}
-
-.product-item img {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-
-.price {
-    color: #007bff;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.about, .contact {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.contact form {
-    max-width: 400px;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.contact label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-.contact input, .contact textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.footer {
+header {
+    background: #0056b3;
+    color: #fff;
+    padding: 1rem 0;
     text-align: center;
-    background: #f8f9fa;
-    padding: 10px 0;
-    border-top: 1px solid #ddd;
 }
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+}
+
+.navbar {
+    background: #333;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Unterstützt mehrere Zeilen bei kleineren Bildschirmen */
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    display: block;
+}
+
+.navbar a:hover {
+    background: #0056b3;
+}
+
+/* Abschnittsstile */
+.section {
+    padding: 2rem 0;
+}
+
+.section h2 {
+    color: #0056b3;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.section p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section ul li {
+    margin: 0.5rem 0;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        padding: 0.5rem 1rem;
+    }
+
+    .section {
+        padding: 1.5rem 0;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .navbar a {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .section h2 {
+        font-size: 1.3rem;
+    }
+
+    .section p {
+        font-size: 0.9rem;
+    }
+
+    .section ul li {
+        font-size: 0.9rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Zusätzliche Stile für neue Inhalte */
+h3 {
+    font-size: 1.6rem;
+    color: #0056b3;
+    margin-top: 1rem;
+}
+
+ul {
+    margin: 0.5rem 0 1.5rem 1.5rem;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 1rem;
+}
+
