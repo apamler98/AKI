@@ -24,12 +24,12 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 3rem; /* Größer für Desktop */
+    font-size: 2.5rem; /* Einheitlich für Desktop und Mobile */
 }
 
 header p {
     margin: 0.5rem 0 0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 /* Navigation */
@@ -42,7 +42,8 @@ header p {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center; /* Zentrierte Navigation */
 }
 
 .navbar li {
@@ -52,9 +53,8 @@ header p {
 .navbar a {
     color: #fff;
     text-decoration: none;
-    padding: 1rem 2rem; /* Breitere Abstände für Desktop */
+    padding: 0.8rem 1.5rem;
     display: block;
-    font-size: 1.1rem;
 }
 
 .navbar a:hover {
@@ -63,67 +63,50 @@ header p {
 
 /* Abschnitte */
 .section {
-    padding: 3rem 0; /* Mehr Abstand zwischen Abschnitten */
-    text-align: justify;
+    padding: 2rem 0;
+    background-color: #fff; /* Kontrast zur Hintergrundfarbe */
+    margin-bottom: 1rem; /* Abstand zwischen Abschnitten */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
 }
 
 .section h2 {
     color: #0056b3;
-    font-size: 2.5rem; /* Größere Überschriften für Desktop */
+    font-size: 2rem;
     margin-bottom: 1rem;
     text-align: center;
 }
 
 .section p {
-    font-size: 1.2rem;
-    margin: 1rem 0;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    text-align: justify;
 }
 
 .section ul {
     list-style: disc;
-    padding-left: 2rem; /* Indentierte Listen */
+    padding-left: 2rem;
     margin: 1rem 0;
 }
 
 .section ul li {
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 
-/* Flexibles Layout für Fachbereiche */
-#studiengaenge .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem; /* Abstand zwischen den Bereichen */
+/* Flexibles Layout entfernen */
+#studiengaenge ul,
+#campusleben ul {
+    display: block; /* Inhalte komplett untereinander */
+    margin: 0;
+    padding: 0;
 }
 
-#studiengaenge h3 {
-    flex: 1 1 100%; /* H3-Überschriften auf voller Breite */
-    font-size: 2rem;
-    color: #0056b3;
-    text-align: center;
-}
-
-#studiengaenge ul {
-    flex: 1 1 calc(33.333% - 2rem); /* Drei Spalten auf Desktops */
+#studiengaenge ul li,
+#campusleben ul li {
+    margin-bottom: 1rem;
     background: #f4f4f4;
     padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Campusleben */
-#campusleben ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-between;
-}
-
-#campusleben ul li {
-    flex: 1 1 calc(33.333% - 2rem); /* Drei Spalten für Campusleben */
-    background: #f4f4f4;
-    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -131,12 +114,12 @@ header p {
 /* Kontaktbereich */
 #kontakt address {
     font-style: normal;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding: 1.5rem;
     background: #f4f4f4;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left; /* Einheitlich für Desktop und Mobile */
 }
 
 #kontakt address a {
@@ -162,48 +145,14 @@ header p {
 }
 
 /* Responsive Design */
-
-/* Tablets */
+/* Kleinere Bildschirme (Tablets und Smartphones) bleiben unverändert */
 @media (max-width: 1024px) {
     header h1 {
-        font-size: 2.5rem;
-    }
-
-    header p {
-        font-size: 1.1rem;
-    }
-
-    .navbar a {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    .section h2 {
-        font-size: 2rem;
-    }
-
-    .section p {
-        font-size: 1.1rem;
-    }
-
-    #studiengaenge ul,
-    #campusleben ul li {
-        flex: 1 1 calc(50% - 2rem); /* Zwei Spalten auf Tablets */
-    }
-}
-
-/* Smartphones */
-@media (max-width: 768px) {
-    header h1 {
         font-size: 2rem;
     }
 
     header p {
         font-size: 1rem;
-    }
-
-    .navbar ul {
-        flex-direction: column;
     }
 
     .navbar a {
@@ -219,9 +168,9 @@ header p {
         font-size: 1rem;
     }
 
-    #studiengaenge ul,
+    #studiengaenge ul li,
     #campusleben ul li {
-        flex: 1 1 100%; /* Eine Spalte auf Smartphones */
+        padding: 1rem;
     }
 
     #kontakt address {
